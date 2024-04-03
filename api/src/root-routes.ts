@@ -1,10 +1,12 @@
 import type { Request, Response } from 'express';
+import { core } from '@tscc/core';
 import express from 'express';
 
 const router = express.Router();
 
-router.get('/', (req: Request, res: Response) => {
-  res.send({ message: 'Hello API' });
-});
+router.use('/', (req: Request, res: Response ) => {
+  res.json({ message: "Hello" + core()});
+
+})
 
 export default router;
